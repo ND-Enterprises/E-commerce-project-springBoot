@@ -65,6 +65,21 @@ public class AdminController {
 	    mv.addObject("admin", authentication.getName());
 	    return mv;
 	}
+
+	@GetMapping( value={"/","Dashboard1"})
+	public ModelAndView adminHome(Model model) {
+		Authentication authentication = SecurityContextHolder.getContext();
+		ModelAndView mv = new ModelAndView("adminHome");
+		mv.addObject("admin", authentication.getName());
+		return mv;
+	}
+
+	public ModelAndView adminHome(Model model) {
+		Authentication authentication = SecurityContextHolder.getContext();
+		ModelAndView mv = new ModelAndView("adminHome");
+		mv.addObject("admin", authentication.getName());
+		return mv;
+	}
 	
 	@GetMapping("categories")
 	public ModelAndView getcategory() {
