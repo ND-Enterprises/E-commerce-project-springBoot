@@ -27,6 +27,15 @@ public class userService {
 			throw new RuntimeException("Add user error");
 		}
 	}
+
+	public User deleteUser(User user) {
+		User user = this.userDao.getUserById(id);
+		if(user != null) {
+			this.userDao.deleteUser(user);
+			return user;
+		}
+		return null;
+	}
 	
 	public User checkLogin(String username,String password) {
 		return this.userDao.getUser(username, password);

@@ -36,6 +36,11 @@ public class userDao {
 		System.out.println("User added" + user.getId());
         return user;
 	}
+
+	public User deleteUser(User user) {
+		this.sessionFactory.getCurrentSession().delete(user);
+		return user;
+	}
     
 //    public User checkLogin() {
 //    	this.sessionFactory.getCurrentSession().

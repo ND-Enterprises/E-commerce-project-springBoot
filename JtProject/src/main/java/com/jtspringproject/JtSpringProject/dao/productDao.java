@@ -40,7 +40,7 @@ public class productDao {
 		this.sessionFactory.getCurrentSession().update(String.valueOf(Product.class),product);
 		return product;
 	}
-	@Transactional
+
 	public Boolean deletProduct(int id) {
 
 		Session session = this.sessionFactory.getCurrentSession();
