@@ -33,6 +33,10 @@ public class cartService {
         cartDao.deleteCart(cart);
     }
 
+    public void getproductsByCartID(Integer cart_id) {
+        return this.cartDao.getProductsByCartID(cart_id);
+    }
+
 //    pubiic List<Cart> getCartByUserId(int customer_id){
 //        return cartDao.getCartsByCustomerID(customer_id);
 //    }

@@ -80,4 +80,17 @@ public class userDao {
 	            return null; 
 	        }
     	}
+
+	@Transactional
+	public User getUserByEmail(String email) {
+		Query<User> query = sessionFactory.getCurrentSession().createQuery("from User where email = :email", User.class);
+		query.setParameter("email", username);
+
+		try {
+			return query.getSingleResult();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
 }

@@ -27,7 +27,12 @@ public class userService {
 			throw new RuntimeException("Add user error");
 		}
 	}
-	
+
+	public Optional<User> findByEmail(String email) {;
+		     return this.userDao.getUserByEmail(email);
+	}
+
+
 	public User checkLogin(String username,String password) {
 		return this.userDao.getUser(username, password);
 	}

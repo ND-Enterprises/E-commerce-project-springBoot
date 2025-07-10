@@ -31,14 +31,14 @@ public class cartProductDao {
     }
 
     @Transactional
-    public List<Product> getProductByCartID(Integer cart_id) {
+    public List<Product> getProductsByCartID(Integer cart_id) {
         String sql = "SELECT product_id FROM cart_product WHERE cart_id = :cart_id";
         List<Integer> productIds = this.sessionFactory.getCurrentSession()
                 .createNativeQuery(sql)
                 .setParameter("cart_id", cart_id)
                 .list();
 
-        sql = "SELECT * FROM product WHERE id IN (:product_ids)";
+        sql = "SELECT * FROM product WHERE id IN (:productIds)";
         return this.sessionFactory.getCurrentSession()
                 .createNativeQuery(sql, Product.class)
                 .setParameterList("product_ids", productIds)
