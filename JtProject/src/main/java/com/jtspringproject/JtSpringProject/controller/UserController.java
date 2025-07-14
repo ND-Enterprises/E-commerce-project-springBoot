@@ -77,7 +77,7 @@ public class UserController{
 	}
 	
 	@GetMapping("/user/products")
-	public ModelAndView getproduct() {
+	public ModelAndView getproducts() {
 
 		ModelAndView mView = new ModelAndView("uproduct");
 

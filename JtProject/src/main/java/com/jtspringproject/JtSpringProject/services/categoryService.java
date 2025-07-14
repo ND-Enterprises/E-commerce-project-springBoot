@@ -31,7 +31,7 @@ public class categoryService {
 		return this.categoryDao.updateCategory(id, name);
 	}
 
-	public Category getCategory(int id) {
+	public Category getcategory(int id) {
 		return this.categoryDao.getCategory(id);
 	}
 }

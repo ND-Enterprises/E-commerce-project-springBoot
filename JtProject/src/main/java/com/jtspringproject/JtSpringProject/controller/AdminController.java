@@ -67,7 +67,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("categories")
-	public ModelAndView getcategory() {
+	public ModelAndView getcategories() {
 		ModelAndView mView = new ModelAndView("categories");
 		List<Category> categories = this.categoryService.getCategories();
 		mView.addObject("categories", categories);
@@ -128,7 +128,7 @@ public class AdminController {
 	@RequestMapping(value = "products/add",method=RequestMethod.POST)
 	public String addProduct(@RequestParam("name") String name,@RequestParam("categoryid") int categoryId ,@RequestParam("price") int price,@RequestParam("weight") int weight, @RequestParam("quantity")int quantity,@RequestParam("description") String description,@RequestParam("productImage") String productImage) {
 		System.out.println(categoryId);
-		Category category = this.categoryService.getCategory(categoryId);
+		Category category = this.categoryService.getcategory(categoryId);
 		Product product = new Product();
 		product.setId(categoryId);
 		product.setName(name);
